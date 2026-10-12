@@ -45,12 +45,14 @@ Cloudflare 变更另运行 `npm run check:cloudflare` 与 `npm run test:cloudfla
 
 2026-10-12 清理后：36 个测试文件 / 668 项单元测试通过；类型检查（随构建）、生产构建、`test:seo`、`test:deployment` 和 `check:repository` 通过。精简后的 `test:recovery` 通过，含冲突双版本恢复、损坏隔离、100 行 PDF（6 页）、20 组模板/宽度及长备注内容检查。
 
-本轮 CDP Proxy 未响应，`test:documents`、`test:editing`、`test:navigation` 未重跑；导航脚本完成语法检查。Cloudflare 专项本轮未重跑。旧专项成绩不作为当前通过依据。
+`test:documents`、`test:editing`、`test:navigation` 本次未重跑，导航脚本完成语法检查；旧专项成绩不作为当前通过依据。
+
+Cloudflare `test:cloudflare` 本地 workerd 验证通过。正式 Worker 已部署，HTTPS 首页、六类单据入口、参考汇率、使用说明、canonical/索引策略、站点地图及 API 配置/JSON 404 已实际检查；生产分支设为 `release`。在线 AI 尚未配置，不代表真实模型调用已验收。
 
 提交前人工检查本次变更涉及的页面和导出文件。以下仍需专项或真实环境验收：
 
 - 六类单据的真实手机、全键盘/读屏/对比度、打印设备及大量图片/多语言交付效果。
 - 浏览器关闭、取消关闭、BFCache、实际配额耗尽、断电及强制终止；不能保证退出时异步保存成功。
-- 真实 AI 供应商、平台部署、WAF、预算及多实例限流；本地模拟不代表线上验收。
+- 真实 AI 供应商、EdgeOne/Node 公开部署、WAF、预算及多实例限流；本地模拟不代表这些场景的线上验收。
 - 企业/产品目录的完整浏览器交互目前主要依赖单元测试与人工验收；旧目录专项已移除。
 - 大分包和依赖许可人工复核。构建或许可证收集成功不代表审查完成。
