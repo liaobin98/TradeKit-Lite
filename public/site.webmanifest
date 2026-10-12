@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "TradeKit Lite · 外贸工具箱",
+  "short_name": "外贸工具箱",
+  "description": "本地处理报价、发票、合同、装箱和报关单据的轻量外贸工具箱",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#e9edeb",
+  "theme_color": "#20282c",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

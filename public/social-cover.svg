@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#e9edeb"/>
+  <svg x="80" y="190" width="224" height="224" viewBox="0 0 512 512" fill="none">
+    <rect width="512" height="512" rx="104" fill="#17735e"/>
+    <path d="M112 136h192v60h-66v180h-60V196h-66v-60Z" fill="#fff"/>
+    <path d="M282 216h60v100h66v60H282V216Z" fill="#b4d9cf"/>
+  </svg>
+  <g font-family="Arial, sans-serif">
+    <text x="360" y="267" font-size="66" font-weight="700" fill="#14272f">TradeKit Lite</text>
+    <text x="360" y="328" font-size="30" fill="#17735e">Trade documents, locally.</text>
+    <text x="360" y="375" font-size="22" fill="#526a60">Quotes · Invoices · Contracts · Packing lists</text>
+    <text x="80" y="542" font-size="24" fill="#526a60">Open-source trade document toolkit</text>
+  </g>
+</svg>

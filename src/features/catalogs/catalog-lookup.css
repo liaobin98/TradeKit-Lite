@@ -1,0 +1,13 @@
+.catalog-lookup-field { min-width: 0; }
+.catalog-lookup-field > label { display: block; }
+.catalog-lookup-input { position: relative; min-width: 0; }
+.catalog-lookup-input .ui-input { padding-right: 44px; }
+.catalog-lookup-input .catalog-lookup-trigger { position: absolute; right: 4px; bottom: 4px; width: 28px; min-height: 28px; height: 28px; margin: 0; padding: 0; border: 0; background: transparent; color: var(--color-muted-foreground); }
+.catalog-lookup-input .catalog-lookup-trigger:hover { background: var(--color-accent); color: var(--color-foreground); }
+.product-editor-table .catalog-lookup-trigger { bottom: 8px; }
+.catalog-lookup-popover { width: 420px; max-width: calc(100vw - 24px); padding: 0; }
+.catalog-lookup-option { min-width: 0; display: grid; gap: 4px; }
+.catalog-lookup-option strong { font-weight: 600; overflow-wrap: anywhere; }
+.catalog-lookup-option small { color: var(--color-muted-foreground); font-size: 12px; overflow-wrap: anywhere; }
+.catalog-lookup-note { margin: 0; padding: 12px; color: var(--color-muted-foreground); font-size: 12px; }
+.catalog-lookup-warning { margin: 6px 0 0; font-size: 11px; line-height: 1.5; color: #526a60; overflow-wrap: anywhere; }

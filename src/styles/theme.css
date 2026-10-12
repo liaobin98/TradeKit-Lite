@@ -1,0 +1,18 @@
+@import "tailwindcss/theme.css";
+@import "tailwindcss/utilities.css";
+@source "../**/*.{ts,tsx}";
+@theme inline {
+ --font-control: "Microsoft YaHei UI", "PingFang SC", "Segoe UI", sans-serif;
+ --color-background: #fafcfb;
+ --color-foreground: #203c32;
+ --color-primary: #17735e;
+ --color-primary-foreground: #ffffff;
+ --color-secondary: #e2ece6;
+ --color-accent: #e6f0ea;
+ --color-popover: #ffffff;
+ --color-popover-foreground: #203c32;
+ --color-input: #9eaaa4;
+ --color-muted-foreground: #6c7f88;
+ --color-ring: #55b98c;
+ --color-destructive: #b14232;
+}

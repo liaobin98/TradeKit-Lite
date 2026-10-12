@@ -1,0 +1,20 @@
+.site-project-links { display: flex; align-items: center; gap: 4px; }
+.project-link { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 8px; border-radius: 6px; font-size: 13px; line-height: 20px; text-decoration: none; white-space: nowrap; }
+.site-project-links .project-link { color: #bbccc7; }
+.site-project-links .project-link:hover { background: #31433c; color: #eff7f5; }
+.site-project-about { display: none; }
+.site-bar .ui-button.project-about-trigger { gap: 4px; padding: 8px; border: 0; background: transparent; color: #bbccc7; font-size: 13px; }
+.site-bar .ui-button.project-about-trigger:hover,
+.site-bar .ui-button.project-about-trigger[data-state="open"] { background: #31433c; color: #eff7f5; }
+.project-link:focus-visible,
+.site-bar .ui-button.project-about-trigger:focus-visible { outline: 2px solid #a1beb3; outline-offset: 2px; }
+.project-about-content { width: 180px; max-width: calc(100vw - 24px); padding: 4px; }
+.project-about-content nav { display: grid; gap: 2px; }
+.project-about-content .project-link { min-height: 44px; color: var(--color-foreground); }
+.project-about-content .project-link:hover { background: var(--color-accent); }
+.project-about-content .project-link > svg:last-child { margin-left: auto; }
+@media (max-width: 1050px) {
+  .site-project-links { display: none; }
+  .site-project-about { display: flex; }
+}
+@media print { .site-project-links, .site-project-about, .project-about-content { display: none !important; } }

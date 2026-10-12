@@ -1,0 +1,21 @@
+# TradeKit Lite · 外贸工具箱
+
+> TradeKit Lite 是开源的浏览器外贸单据工具，正式地址为 __SITE_URL__/。提供 QT 报价单、PI 形式发票、SC 销售合同、CI 商业发票、PL 装箱单及 CD 报关信息的制作、预览、导出和打印。
+
+普通制单、预览和导出在浏览器完成，业务资料保存在当前浏览器的 IndexedDB，不提供云端同步。可选在线 AI 经用户确认后将输入文本发送给配置的模型服务；参考汇率经后端请求上游，不能代替结算报价。CD 只用于信息整理，不是海关申报系统。软件提供模板和工具，不提供贸易、法律或海关合规认证。
+
+## 产品与使用
+
+- [工具首页](__SITE_URL__/): 在线单据工作台、四个城市时钟、参考汇率及六类单据入口。
+- [使用说明与常见问题](__SITE_URL__/guide/): 无需 JavaScript 即可阅读的功能、保存规则、输出限制、隐私边界及常见问题。
+- [Markdown 产品说明](__SITE_URL__/guide.md): 可供引用的结构化产品事实和操作说明。
+
+## 开源与更新
+
+- [GitHub 仓库](https://github.com/liaobin98/tradekit-lite): 项目源码；main 是开发线，release 是发布线。
+- [版本更新](https://github.com/liaobin98/tradekit-lite/releases): 已公开版本的更新说明与下载；源码提交不等于正式版本已发布。
+- [项目许可](https://github.com/liaobin98/tradekit-lite/blob/main/LICENSE): 原创代码及文档采用 MIT；第三方依赖保留各自许可。
+
+## Optional
+
+- [完整产品事实](__SITE_URL__/llms-full.txt): 单文件产品说明，包含保存、备份、AI、导出与适用边界。

@@ -1,0 +1,85 @@
+/* Print the live preview only, without its sticky/scrolling workspace. */
+@media print {
+  @page {
+    size: A4 portrait;
+    /* No page-margin area for the browser's date/title/URL/page-number labels. */
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    background: white;
+  }
+
+  .main-workspace {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    /* Keep the document inset, including at automatic page breaks. */
+    padding: 10mm;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .main-workspace > :not(.reference-workspace),
+  .reference-workspace > :not(.reference-preview),
+  .reference-preview > :not(.paper),
+  .reference-preview .logo-placeholder {
+    display: none !important;
+  }
+
+  .main-workspace .reference-workspace {
+    display: block;
+  }
+
+  .main-workspace .reference-preview {
+    position: static;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: white;
+  }
+
+  .main-workspace .reference-preview > .paper {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    margin: 0;
+    box-shadow: none;
+    overflow: visible;
+    break-after: page;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .main-workspace .reference-preview > .paper:last-child {
+    break-after: auto;
+  }
+
+  .reference-product-table thead {
+    display: table-header-group;
+  }
+
+  .reference-product-table tr,
+  .preview-letterhead,
+  .preview-doc-heading,
+  .preview-party,
+  .reference-total,
+  .preview-terms p,
+  .preview-customs > div,
+  .preview-bank {
+    break-inside: avoid;
+  }
+
+  .preview-remarks p {
+    orphans: 3;
+    widows: 3;
+  }
+}

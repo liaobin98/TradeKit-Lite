@@ -1,0 +1,20 @@
+.site-tools { display: flex; align-items: center; gap: 12px; margin-left: auto; flex-shrink: 0; }
+.site-tools .site-local { margin-left: 0; white-space: nowrap; }
+.site-bar .ui-button.workspace-backup-trigger { background: transparent; border: 1px solid #698079; color: #eff7f5; white-space: nowrap; }
+.site-bar .ui-button.workspace-backup-trigger:hover:not(:disabled) { background: #31433c; border-color: #a1beb3; }
+.workspace-backup-dialog > .workspace-backup-actions { justify-content: center; }
+.workspace-backup-help { font-size: 12px; }
+.workspace-restore-review { display: grid; gap: 12px; padding: 16px; background: #edf2ef; border: 1px solid #bac6c3; border-radius: 6px; }
+.workspace-restore-review h3 { margin: 0; font-size: 16px; }
+.workspace-backup-filename { font-size: 13px; }
+.workspace-backup-counts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0; }
+.workspace-backup-counts dt { font-size: 12px; color: #526a60; }
+.workspace-backup-counts dd { margin: 4px 0 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+.workspace-backup-dialog .workspace-backup-error { color: #9a3412; }
+.workspace-backup-dialog .workspace-backup-success { color: #226349; }
+@media (max-width: 600px) {
+  .site-tools { gap: 0; }
+  .workspace-backup-trigger .backup-trigger-text { display: none; }
+  .site-bar .ui-button.workspace-backup-trigger { width: 36px; padding: 0; }
+  .workspace-backup-counts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

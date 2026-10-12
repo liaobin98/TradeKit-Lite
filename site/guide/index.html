@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>使用说明与常见问题｜TradeKit Lite 外贸工具箱</title>
+  <meta name="description" content="了解 TradeKit Lite 六类外贸单据、保存与草稿规则、Excel 和 PDF 导出、打印、JSON 备份，以及本地数据和可选在线 AI 的隐私边界。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#20282c">
+  <link rel="canonical" href="__SITE_URL__/guide/">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <link rel="stylesheet" href="/guide/guide.css">
+  <link rel="alternate" type="text/markdown" href="__SITE_URL__/guide.md" title="Markdown 产品与使用说明">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="TradeKit Lite · 外贸工具箱">
+  <meta property="og:title" content="使用说明与常见问题｜TradeKit Lite 外贸工具箱">
+  <meta property="og:description" content="六类单据的使用、保存、导出、备份及隐私边界，无需 JavaScript 即可阅读。">
+  <meta property="og:url" content="__SITE_URL__/guide/">
+  <meta property="og:image" content="__SITE_URL__/social-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TradeKit Lite 外贸工具箱，绿色 TL 标识及外贸单据制作介绍">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="使用说明与常见问题｜TradeKit Lite 外贸工具箱">
+  <meta name="twitter:description" content="六类单据的使用、保存、导出、备份及隐私边界，无需 JavaScript 即可阅读。">
+  <meta name="twitter:image" content="__SITE_URL__/social-cover.png">
+  <meta name="twitter:image:alt" content="TradeKit Lite 外贸工具箱，绿色 TL 标识及外贸单据制作介绍">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "__SITE_URL__/guide/#webpage",
+      "url": "__SITE_URL__/guide/",
+      "name": "使用说明与常见问题｜TradeKit Lite 外贸工具箱",
+      "description": "六类外贸单据的使用、保存、导出、备份及隐私边界。",
+      "inLanguage": "zh-CN",
+      "about": {"@type": "WebApplication", "@id": "__SITE_URL__/#application", "name": "TradeKit Lite · 外贸工具箱"},
+      "isPartOf": {"@type": "WebSite", "@id": "__SITE_URL__/#website", "url": "__SITE_URL__/"}
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">跳到使用说明</a>
+  <header>
+    <a class="brand" href="/"><img src="/favicon.svg" width="38" height="38" alt=""><span>TradeKit Lite<small>外贸工具箱</small></span></a>
+    <nav aria-label="说明页导航"><a href="/">打开工具</a><a href="https://github.com/liaobin98/tradekit-lite">GitHub</a><a href="https://github.com/liaobin98/tradekit-lite/releases">更新日志</a></nav>
+  </header>
+  <main id="content">
+    <h1>使用说明与常见问题</h1>
+    <p class="lead">TradeKit Lite 是开源的浏览器外贸单据工作台：制作六类单据，本地保存资料，导出 Excel、PDF 或通过浏览器打印。</p>
+    <nav class="contents" aria-label="说明目录"><a href="#documents">支持的单据</a><a href="#workflow">制作与保存</a><a href="#output">输出与备份</a><a href="#privacy">数据与 AI</a><a href="#faq">常见问题</a></nav>
+    <section id="documents">
+      <h2>支持哪些外贸单据？</h2>
+      <dl class="document-types">
+        <div><dt>QT · 报价单</dt><dd>产品、数量、价格与贸易条款。</dd></div>
+        <div><dt>PI · 形式发票</dt><dd>付款、交期与银行资料，可填写运费。</dd></div>
+        <div><dt>SC · 销售合同</dt><dd>买卖方、产品、金额和贸易条款；当前无专属签章模块。</dd></div>
+        <div><dt>CI · 商业发票</dt><dd>买卖方、产品、金额及贸易条款；当前无专属运输模块。</dd></div>
+        <div><dt>PL · 装箱单</dt><dd>当前使用含价格的公共产品表；尚无专属装箱字段。</dd></div>
+        <div><dt>CD · 报关信息</dt><dd>申报要素、运输与海关商品信息；不直接向海关申报。</dd></div>
+      </dl>
+    </section>
+    <section id="workflow">
+      <h2>如何制作、保存和复用资料？</h2>
+      <ol><li>首页选择单据类型。仅存在同类型草稿时，询问恢复最近草稿或新建。</li><li>填写卖方、买方和产品行；检索目录并明确选择后，才会带入已有内容。</li><li>选择语言、主题和模板，核对字段、图片、合计与预览，再保存或输出。</li></ol>
+      <p>同类型支持多份独立单据，新建不覆盖旧记录。未填写的新空白单据不自动保存；填写后自动保存为草稿。点击“保存”移除草稿标签，“保存草稿”才主动转回草稿。</p>
+      <p>已保存单据可以继续编辑。编辑、自动保存、打印与导出不改变其保存状态。卖方、买方与产品目录是独立副本，删除来源单据不会自动删除目录资料。</p>
+    </section>
+    <section id="output">
+      <h2>导出、打印和备份有什么区别？</h2>
+      <ul><li><strong>Excel：</strong>导出含业务字段、Logo 和产品图片的 XLSX，金额为静态值。</li><li><strong>PDF：</strong>按产品行输出多页 A4 栅格图像，续页重复表头并提供页码，长备注可续页；文字不可搜索。单个超高产品或不可拆分说明需缩短或拆分。</li><li><strong>打印：</strong>使用浏览器打印预览，只打印单据；长表可分页，请核对边距、分页和底色。</li><li><strong>JSON 备份：</strong>用于恢复编辑资料。恢复完整备份会替换当前资料，并先生成恢复前安全备份。保存失败时，可在备份中保留当前编辑副本，恢复为新单据。</li></ul>
+      <p>Excel 或 PDF 不能替代 JSON 备份。保存不校验业务内容；导出和打印检查数值，但保存或输出成功不代表交易生效、法律有效或合规认证。</p>
+    </section>
+    <section id="privacy">
+      <h2>资料是否上传云端？在线 AI 是否联网？</h2>
+      <p>普通填写、预览、保存、导出和打印在浏览器完成。单据、独立资料目录、图片和设置保存在当前浏览器的 IndexedDB，不上传为云端业务档案，不提供跨设备同步。</p>
+      <p>换浏览器、域名、协议、端口或设备后，无法直接读取原资料。请在原地址下载 JSON 备份，再到新地址恢复；不要通过清空网站数据排查资料丢失。</p>
+      <p>本地规则解析不联网。<strong>在线 AI 是可选功能：</strong>用户同意后，所输入文本会发送给配置的模型服务，候选结果需人工核对后采用。访问口令仅保留在当前页面内存，不进入草稿或备份。</p>
+      <p>参考汇率经后端请求上游，日期是上游数据日期。汇率仅供参考，不构成结算报价、银行承诺或财务建议。</p>
+    </section>
+    <section id="faq">
+      <h2>常见问题</h2>
+      <h3>必须注册账号吗？</h3><p>普通制单无需账号。在线 AI 可能需要部署者提供的独立访问口令；这不是用户账号体系。</p>
+      <h3>提供云端保存、多人协作或跨设备同步吗？</h3><p>不提供。业务资料仅保存在当前浏览器，请定期下载 JSON 备份。</p>
+      <h3>不使用在线 AI，能否制作单据？</h3><p>可以。普通制单、预览、导出、打印和本地规则解析不依赖在线 AI。页面加载和参考汇率需要网络，没有承诺完整离线运行。</p>
+      <h3>草稿导出后会自动变成已保存吗？</h3><p>不会。导出和打印不改变状态，需主动点击“保存”移除草稿标签。</p>
+      <h3>保存失败或资料损坏怎么办？</h3><p>先在“备份 / 恢复”中导出当前编辑副本，或备份全部资料；完整备份会额外保留未保存编辑，恢复时生成新单据。保留副本后可确认重新读取已保存版本。一份单据损坏不影响其他单据，可恢复上一版本；无法进入工作台时，恢复页面也提供备份和恢复入口。不要清空网站数据。</p>
+      <h3>能否直接向海关申报？</h3><p>不能。CD 是信息整理工具，不是海关申报系统，用户需自行核实适用要求与实际申报流程。</p>
+      <h3>支持手机和主屏幕图标吗？</h3><p>提供响应式界面、浏览器标签页图标、Apple Touch Icon 与 Android 自适应图标。主屏添加能力取决于浏览器与系统，不代表离线缓存或云端同步。</p>
+    </section>
+    <section>
+      <h2>开源、更新与适用边界</h2>
+      <p>原创代码和文档采用 MIT 许可，第三方依赖保留各自许可。工具不提供贸易、法律或海关合规认证；业务、金额、分页和交付内容需自行核对。</p>
+      <p><a href="https://github.com/liaobin98/tradekit-lite">查看源码</a> · <a href="https://github.com/liaobin98/tradekit-lite/releases">查看公开版本与更新说明</a> · <a href="/guide.md">Markdown 说明</a></p>
+    </section>
+  </main>
+  <footer><a href="/">返回 TradeKit Lite 工具</a> · <a href="/llms.txt">机器可读产品索引</a></footer>
+</body>
+</html>

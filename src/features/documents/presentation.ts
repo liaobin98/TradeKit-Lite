@@ -1,0 +1,2 @@
+export const layouts = [['classic','经典商务'],['executive','深色董事会'],['swiss','瑞士网格'],['gallery','产品画册'],['ledger','财务账本'],['diplomatic','国际公函'],['atelier','精品工坊'],['axis','现代侧轴'],['signature','杂志签名'],['meridian','环球贸易'],['compact','紧凑']] as const;
+export const themes=[['墨绿','#315f4c'],['深海蓝','#1d4e75'],['石墨黑','#30343b'],['勃艮第红','#7a263a'],['皇家紫','#584077'],['孔雀青','#087b78'],['香槟金','#9a7428'],['冷灰','#60717c'],['靛青','#344d92'],['朱砂红','#9b382d']] as const;

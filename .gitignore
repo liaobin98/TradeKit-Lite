@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.edgeone/
+.wrangler/
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+*.log
+test-artifacts/
+coverage/
+*.tsbuildinfo
+public/LICENSE
+public/THIRD-PARTY-NOTICES.txt

@@ -1,0 +1,11 @@
+# Cloudflare local bindings only. Copy to .dev.vars without overwriting an
+# existing file. Never commit real credentials or prefix them with VITE_.
+AI_BASE_URL=https://api.openai.com/v1
+AI_MODEL=gpt-4o-mini
+AI_API_KEY=
+# Required even in local Wrangler mode; generate a separate random token.
+AI_ACCESS_TOKEN=
+AI_RATE_LIMIT=10
+AI_MAX_CONCURRENT=2
+AI_MAX_TOKENS=2048
+EXCHANGE_URL=https://open.er-api.com/v6/latest/USD

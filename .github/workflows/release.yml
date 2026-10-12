@@ -1,0 +1,125 @@
+name: Release
+
+on:
+  push:
+    branches: [release]
+    paths:
+      - package.json
+      - CHANGELOG.md
+      - 'docs/releases/**'
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: '公开发布当前 release 分支对应的 Release 草稿（否则只生成草稿）'
+        type: boolean
+        default: false
+      license_reviewed:
+        description: '已核对第三方许可、更新说明及本次分发内容'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-branch
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.ref == 'refs/heads/release'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Validate release plan
+        id: plan
+        env:
+          PUBLISH: ${{ github.event_name == 'workflow_dispatch' && inputs.publish }}
+          LICENSE_REVIEWED: ${{ inputs.license_reviewed || false }}
+        run: |
+          if [ "$PUBLISH" = "true" ] && [ "$LICENSE_REVIEWED" != "true" ]; then
+            echo '公开发布前必须确认第三方许可与发布内容已核对。' >&2
+            exit 1
+          fi
+          node scripts/check-release.mjs --if-present --github-output
+      - name: Check existing release
+        if: steps.plan.outputs.enabled == 'true'
+        id: existing
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ steps.plan.outputs.tag }}
+        run: |
+          # A missing release is expected; authentication/API failures are not.
+          status=$(gh api "repos/$GH_REPO/releases/tags/$TAG" --include 2>&1) || {
+            if ! grep -q 'HTTP 404' <<< "$status"; then
+              echo "$status" >&2
+              exit 1
+            fi
+          }
+          if gh release view "$TAG" --json isDraft,targetCommitish > /tmp/release.json 2>/dev/null; then
+            if [ "$(jq -r .isDraft /tmp/release.json)" = "false" ]; then
+              echo '已公开的版本保持不变；后续更新必须使用新版本号。'
+              echo 'skip=true' >> "$GITHUB_OUTPUT"
+            else
+              target=$(jq -r .targetCommitish /tmp/release.json)
+              if [ "$target" != "$GITHUB_SHA" ]; then
+                echo '已有草稿绑定其他提交，拒绝重新指向新代码。请在 Releases 页面核对并发布原草稿，或准备新版本。' >&2
+                exit 1
+              fi
+              echo 'skip=false' >> "$GITHUB_OUTPUT"
+            fi
+          else
+            if git rev-parse --verify "refs/tags/$TAG" >/dev/null 2>&1; then
+              if [ "$(git rev-list -n 1 "$TAG")" != "$GITHUB_SHA" ]; then
+                echo '同名标签已指向其他提交，拒绝覆盖。' >&2
+                exit 1
+              fi
+            fi
+            echo 'skip=false' >> "$GITHUB_OUTPUT"
+          fi
+      - run: npm ci
+        if: steps.plan.outputs.enabled == 'true' && steps.existing.outputs.skip != 'true'
+      - run: npm run typecheck
+        if: steps.plan.outputs.enabled == 'true' && steps.existing.outputs.skip != 'true'
+      - run: npm test
+        if: steps.plan.outputs.enabled == 'true' && steps.existing.outputs.skip != 'true'
+      - run: npm run build
+        if: steps.plan.outputs.enabled == 'true' && steps.existing.outputs.skip != 'true'
+      - name: Package verified build
+        if: steps.plan.outputs.enabled == 'true' && steps.existing.outputs.skip != 'true'
+        env:
+          TAG: ${{ steps.plan.outputs.tag }}
+        run: |
+          mkdir -p test-artifacts/release
+          zip -r "test-artifacts/release/tradekit-lite-$TAG-web.zip" dist
+          cp docs/LICENSE-REPORT.json test-artifacts/release/LICENSE-REPORT.json
+          cp "docs/releases/$TAG.json" test-artifacts/release/RELEASE-MANIFEST.json
+      - name: Create draft or publish confirmed version
+        if: steps.plan.outputs.enabled == 'true' && steps.existing.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ steps.plan.outputs.tag }}
+          PUBLISH: ${{ github.event_name == 'workflow_dispatch' && inputs.publish }}
+        run: |
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            args=(--draft --target "$GITHUB_SHA" --title "TradeKit Lite $TAG" --notes-file "docs/releases/$TAG.md")
+            if [[ "$TAG" == *-* ]]; then args+=(--prerelease); fi
+            gh release create "$TAG" "${args[@]}"
+          fi
+          gh release upload "$TAG" test-artifacts/release/* --clobber
+          if [ "$PUBLISH" = "true" ]; then
+            gh release edit "$TAG" --draft=false
+          fi
+          echo "### $TAG" >> "$GITHUB_STEP_SUMMARY"
+          echo "[查看更新说明和发布文件](https://github.com/$GH_REPO/releases)" >> "$GITHUB_STEP_SUMMARY"
+          echo '默认只生成草稿；公开版本不可覆盖，同一标签也不会重新指向其他提交。' >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="TradeKit Lite 开源外贸工具箱，在线制作报价单、形式发票、销售合同、商业发票、装箱单和报关信息。单据保存在本地浏览器，支持 Excel、PDF 导出、打印及资料备份。">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <link rel="canonical" href="__SITE_URL__/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="TradeKit Lite · 外贸工具箱">
+    <meta property="og:title" content="TradeKit Lite 外贸工具箱｜在线报价单、发票、合同与装箱单">
+    <meta property="og:description" content="六类外贸单据在线制作，资料保存在本地浏览器；支持 Excel、PDF 导出、打印和 JSON 备份。">
+    <meta property="og:url" content="__SITE_URL__/">
+    <meta property="og:image" content="__SITE_URL__/social-cover.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="TradeKit Lite 外贸工具箱，绿色 TL 标识及外贸单据制作介绍">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TradeKit Lite 外贸工具箱｜在线报价单、发票、合同与装箱单">
+    <meta name="twitter:description" content="六类外贸单据在线制作，资料保存在本地浏览器；支持 Excel、PDF 导出、打印和 JSON 备份。">
+    <meta name="twitter:image" content="__SITE_URL__/social-cover.png">
+    <meta name="twitter:image:alt" content="TradeKit Lite 外贸工具箱，绿色 TL 标识及外贸单据制作介绍">
+    <link rel="alternate" type="text/markdown" href="__SITE_URL__/guide.md" title="TradeKit Lite 产品与使用说明">
+    <meta name="theme-color" content="#20282c">
+    <meta name="apple-mobile-web-app-title" content="外贸工具箱">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="icon" type="image/png" href="/icons/favicon-16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/icons/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>TradeKit Lite 外贸工具箱｜在线报价单、发票、合同与装箱单</title>
+    <!-- 首屏样式随 HTML 到达，避免等待应用脚本和样式时闪出无样式内容。 -->
+    <style>
+      html { scrollbar-gutter: stable; }
+      body { margin: 0; background: #e9edeb; }
+      .startup-loading { box-sizing: border-box; min-height: 100vh; min-height: 100dvh; display: grid; place-items: center; padding: 24px; color: #14272f; text-align: center; font-family: Arial, "Microsoft YaHei", sans-serif; }
+      .startup-loading-content > img { display: block; margin: 0 auto 20px; }
+      .startup-loading .startup-loading-title { margin: 0 0 12px; font-size: 20px; font-weight: 700; line-height: 1.4; letter-spacing: 0; }
+      .startup-loading .startup-loading-message { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0; color: #52675e; font-size: 14px; line-height: 1.6; }
+      .startup-loading-spinner { box-sizing: border-box; width: 16px; height: 16px; flex-shrink: 0; border: 2px solid #c2d3ca; border-top-color: #17735e; border-radius: 50%; animation: startup-loading-spin .8s linear infinite; }
+      @keyframes startup-loading-spin { to { transform: rotate(360deg); } }
+      @media (prefers-reduced-motion: reduce) { .startup-loading-spinner { animation: none; } }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "__SITE_URL__/#website",
+            "name": "TradeKit Lite · 外贸工具箱",
+            "url": "__SITE_URL__/",
+            "inLanguage": "zh-CN"
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "__SITE_URL__/#application",
+            "name": "TradeKit Lite · 外贸工具箱",
+            "url": "__SITE_URL__/",
+            "description": "在浏览器中制作六类外贸单据，支持本地保存、Excel 和 PDF 导出、打印及 JSON 备份。",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "browserRequirements": "需要支持 JavaScript 和 IndexedDB 的现代浏览器。",
+            "inLanguage": ["zh-CN", "en"],
+            "image": "__SITE_URL__/social-cover.png",
+            "featureList": ["QT 报价单", "PI 形式发票", "SC 销售合同", "CI 商业发票", "PL 装箱单", "CD 报关信息", "Excel 与 PDF 导出", "浏览器打印", "本地单据和独立资料目录", "JSON 备份与恢复"],
+            "softwareHelp": "__SITE_URL__/guide/",
+            "sameAs": "https://github.com/liaobin98/tradekit-lite",
+            "isPartOf": {"@id": "__SITE_URL__/#website"}
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <div class="startup-loading" role="status" aria-live="polite" aria-atomic="true">
+        <div class="startup-loading-content">
+          <img src="/favicon.svg" width="48" height="48" alt="">
+          <p class="startup-loading-title">正在打开工作台</p>
+          <p class="startup-loading-message"><span class="startup-loading-spinner" aria-hidden="true"></span>正在准备工作台，请稍候…</p>
+        </div>
+      </div>
+    </div>
+    <noscript>
+      <style>#root { display: none; }</style>
+      <main aria-label="TradeKit Lite 产品介绍">
+        <h1>TradeKit Lite · 外贸工具箱</h1>
+        <p>在线制作报价单、形式发票、销售合同、商业发票、装箱单与报关信息。支持 Excel、PDF 导出、浏览器打印，以及卖方、买方和产品资料检索。</p>
+        <p>单据和资料保存在当前浏览器，不提供云端同步；请定期下载 JSON 备份。在线 AI 为可选功能，确认后会将输入文本发送给配置的模型服务。</p>
+        <p><a href="/guide/">使用说明与常见问题</a> · <a href="https://github.com/liaobin98/tradekit-lite">开源项目</a> · <a href="https://github.com/liaobin98/tradekit-lite/releases">版本更新</a></p>
+        <p>交互制单需要启用 JavaScript。无需 JavaScript 也可以阅读使用说明。</p>
+      </main>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
