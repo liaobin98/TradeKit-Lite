@@ -1,6 +1,7 @@
 ## v1.0.0
 
-<details open>
+<details>
+
 <summary>✨ 新增功能</summary>
 
 - 支持报价单、形式发票、销售合同、商业发票、装箱单和报关信息。
@@ -12,7 +13,8 @@
 
 </details>
 
-<details open>
+<details>
+
 <summary>🚀 优化改进</summary>
 
 - PDF 按内容分页，重复表头、显示页码，支持长备注续页。
